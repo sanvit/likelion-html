@@ -1,0 +1,17 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@font-face{
+    font-family: 'NanumSquareL';
+    src:url('https://www.handoyun.com/geo/NanumSquareL.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+div {
+    font-family: 'Arial';
+}
+
