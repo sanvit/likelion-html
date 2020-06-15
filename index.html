@@ -1,178 +1,331 @@
-<!DOCTYPE html>
-<html lang="ko">
+<html>
 
 <head>
-    <title>PS.You</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="tailwind.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
     <meta charset="UTF-8">
 </head>
 
-<!--
-    This page is made with Tailwind UI. More information of Tailwind UI and it's license is available on tailwindui.com.
--->
-
-<body>
-    <script src="assets/js/menu.js"></script>
-    <div class="min-h-screen bg-white">
-        <nav class="bg-white border-b border-gray-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between h-16">
-                    <div class="flex">
-                        <div class="flex-shrink-0 flex items-center">
-                            <img class="block lg:hidden h-8 w-auto" src="/assets/image/psyou-logo.png"
-                                alt="PS.You Logo" />
-                            <img class="hidden lg:block h-8 w-auto" src="/assets/image/psyou-logo.png"
-                                alt="PS.You Logo" />
-
-                        </div>
-                        <div class="hidden sm:-my-px sm:ml-6 sm:flex">
-                            <a href="#"
-                                class="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out">
-                                Calendar
-                            </a>
-                            <a href="#"
-                                class="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                                Illustarions
-                            </a>
-                            <a href="#"
-                                class="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                                Help
-                            </a>
-                            <a href="#"
-                                class="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                                Premium
-                            </a>
-                        </div>
-                    </div>
-                    <div class="hidden sm:ml-6 sm:flex sm:items-center">
-                        <button
-                            class="p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:text-gray-500 focus:bg-gray-100 transition duration-150 ease-in-out"
-                            aria-label="Notifications">
-                            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                            </svg>
-                        </button>
-
-                        <!-- Profile dropdown -->
-                        <div class="ml-3 relative">
-                            <div>
-                                <button onclick="profile();"
-                                    class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out"
-                                    id="user-menu" aria-label="User menu" aria-haspopup="true">
-                                    <img class="h-8 w-8 rounded-full" src="assets/image/profile.jpg" alt="Profile" />
-                                </button>
-                            </div>
-                            <div id="profile"
-                                class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
-                                <div class="py-1 rounded-md bg-white shadow-xs">
-                                    <a href="#"
-                                        class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Your
-                                        Profile
-                                    </a>
-                                    <a href="#"
-                                        class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Settings
-                                    </a>
-                                    <a href="#"
-                                        class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Sign
-                                        out
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="-mr-2 flex items-center sm:hidden">
-                        <!-- Mobile menu button -->
-                        <button onclick="mobilemenu();"
-                            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                            <!--  open: "hidden", MenMenuu closed: "block" -->
-                            <svg id="mb-closed" class="block h-6 w-6" stroke="currentColor" fill="none"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
-                            <!-- Menu open: "block", Menu closed: "hidden" -->
-                            <svg id="mb-open" class="hidden h-6 w-6" stroke="currentColor" fill="none"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!--
-            Mobile menu, toggle classes based on menu state.
-
-            Open: "block", closed: "hidden"
-          -->
-            <div id="mobilemenu" class="hidden sm:hidden">
-                <div class="pt-2 pb-3">
-                    <a href="#"
-                        class="block pl-3 pr-4 py-2 border-l-4 border-indigo-500 text-base font-medium text-indigo-700 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700 transition duration-150 ease-in-out">Calendar
-                    </a>
-                    <a href="#"
-                        class="mt-1 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out">Illustarions
-                    </a>
-                    <a href="#"
-                        class="mt-1 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out">Help
-                    </a>
-                    <a href="#"
-                        class="mt-1 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out">Premium
-                    </a>
-                </div>
-                <div class="pt-4 pb-3 border-t border-gray-200">
-                    <div class="flex items-center px-4">
-                        <div class="flex-shrink-0">
-                            <img class="h-10 w-10 rounded-full" src="assets/image/profile.jpg" alt="" />
-                        </div>
-                        <div class="ml-3">
-                            <div class="text-base font-medium leading-6 text-gray-800">Jaewon Kim
-                            </div>
-                            <div class="text-sm font-medium leading-5 text-gray-500">user@email.com
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-3" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
-                        <a href="#"
-                            class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:text-gray-800 focus:bg-gray-100 transition duration-150 ease-in-out"
-                            role="menuitem">Your Profile
-                        </a>
-                        <a href="#"
-                            class="mt-1 block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:text-gray-800 focus:bg-gray-100 transition duration-150 ease-in-out"
-                            role="menuitem">Settings
-                        </a>
-                        <a href="#"
-                            class="mt-1 block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:text-gray-800 focus:bg-gray-100 transition duration-150 ease-in-out"
-                            role="menuitem">Sign out
-                        </a>
-                    </div>
-                </div>
-            </div>
+<body class="text-center p-4">
+    <header>
+        <nav class="text-right">
+            <ul class="inline-block">
+                <li class="inline"><a href="https://twitter.com/loonatheworld" class="hover:text-blue-400"><i
+                            class="fab fa-twitter"></i> Twitter</a>
+                </li>
+                <li class="inline"><a href="https://www.instagram.com/loonatheworld/" class="hover:text-pink-700"><i
+                            class="fab fa-instagram"></i> Instagram</a>
+                </li>
+                <li class="inline"><a href="https://www.youtube.com/loonatheworld" class="hover:text-red-600"><i
+                            class="fab fa-youtube"></i> YouTube</a></li>
+            </ul>
         </nav>
+        <div id="logo" class="relative container mx-auto w-full">
+            <div class="absolute opacity-0 hover:opacity-100 bg-white inset-0">
+                <img src="/assets/images/loona-k.png" class="w-1/2 inline-block">
+            </div>
+            <div><img src="/assets/images/loona.jpg" class="w-1/4 inline-block"></div>
 
-        <div class="py-10">
-            <header>
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h1 class="text-3xl font-bold leading-tight text-gray-900">
-                        Calendar
-                    </h1>
-                </div>
-            </header>
-            <main>
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <!-- Replace with your content -->
-                    <div id="calendar" class="border-2">
-
-                    </div>
-                    <!-- /End replace -->
-                </div>
-            </main>
         </div>
-    </div>
+    </header>
+    <article>
+        <div id="gallery" class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto p-4 -mt-4 sm:mt-4">
+            <div class="m-4">
+                <div class="relative">
+                    <div class="absolute bg-black z-10 inset-0 opacity-0 hover:opacity-75">
+                        <div
+                            class="relative flex flex-col justify-center items-center text-white w-full h-full text-xl">
+                            <p>2016년 9월 25일 공개</p>
+                            <p>2016년 10월 5일 데뷔</p>
+                            <p>상징동물 : 토끼</p>
+                            <p>상징색 : 분홍색</p>
+                            <p>MBTI : ENTJ</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/assets/images/loona-poster/heejin.jpg" class="w-full mb-2">
+                    </div>
+                </div>
+                <p style="color:#ed0090;">HeeJin (전희진)</p>
+                <p>Listen On <a
+                        href="https://music.youtube.com/playlist?list=OLAK5uy_k1AfFzF1DyScVMaW8bu3pedR7KkVcNLUI"><i
+                            class="hover:text-red-600 fab fa-youtube"></i></a> <a
+                        href="https://open.spotify.com/album/4bAHdv04do1PfJcGIjD2cX?si=_MZY_sA6TFiDY4nKJ5YI-A"><i
+                            class="hover:text-green-400 fab fa-spotify"></i></a></p>
+                <img src="/assets/images/loona-13.png" class="h-6 inline-block">
+            </div>
+            <div class="m-4">
+                <div class="relative">
+                    <div class="absolute bg-black z-10 inset-0 opacity-0 hover:opacity-75">
+                        <div
+                            class="relative flex flex-col justify-center items-center text-white w-full h-full text-xl">
+                            <p>2016년 10월 28일 공개</p>
+                            <p>2016년 11월 17일 데뷔</p>
+                            <p>상징동물 : 고양이</p>
+                            <p>상징색 : 노란색</p>
+                            <p>MBTI : ESFJ</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/assets/images/loona-poster/hyunjin.jpg" class="w-full mb-2">
+                    </div>
+                </div>
+                <p style="color:#fdcc03;">HyunJin (김현진)</p>
+                <p>Listen On <a
+                        href="https://music.youtube.com/playlist?list=OLAK5uy_mgE4EsetpExBxBW4iq360RSbqTpTXzUAM"><i
+                            class="hover:text-red-600 fab fa-youtube"></i></a> <a
+                        href="https://open.spotify.com/album/6u4eaDNAoDT7hB2YVFpmvD?si=WcV6K2M9RhiChftf8lYRog"><i
+                            class="hover:text-green-400 fab fa-spotify"></i></a></p>
+                <img src="/assets/images/loona-13.png" class="h-6 inline-block">
+            </div>
+            <div class="m-4">
+                <div class="relative">
+                    <div class="absolute bg-black z-10 inset-0 opacity-0 hover:opacity-75">
+                        <div
+                            class="relative flex flex-col justify-center items-center text-white w-full h-full text-xl">
+                            <p>2016년 12월 8일 공개</p>
+                            <p>2016년 12월 15일 데뷔</p>
+                            <p>상징동물 : 하얀 새</p>
+                            <p>상징색 : 초록색</p>
+                            <p>활동 잠정 중단</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/assets/images/loona-poster/haseul.jpg" class="w-full mb-2">
+                    </div>
+                </div>
+                <p style="color:#00a652;">HaSeul (조하슬)</p>
+                <p>Listen On <a
+                        href="https://music.youtube.com/playlist?list=OLAK5uy_kn-xANASRmR4ZaZ_j2Vf3Jg2MSTVRw5rQ"><i
+                            class="hover:text-red-600 fab fa-youtube"></i></a> <a
+                        href="https://open.spotify.com/album/5i0Av4RNFxgWGbi6VpeQBP?si=z1-KUx10SYyCaHpvOZKDQg"><i
+                            class="hover:text-green-400 fab fa-spotify"></i></a></p>
+                <img src="/assets/images/loona-13.png" class="h-6 inline-block">
+            </div>
+            <div class="m-4">
+                <div class="relative">
+                    <div class="absolute bg-black z-10 inset-0 opacity-0 hover:opacity-75">
+                        <div
+                            class="relative flex flex-col justify-center items-center text-white w-full h-full text-xl">
+                            <p>2017년 1월 4일 공개</p>
+                            <p>2017년 1월 16일 데뷔</p>
+                            <p>상징동물 : 개구리</p>
+                            <p>상징색 : 주황</p>
+                            <p>MBTI : ENFP</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/assets/images/loona-poster/yeojin.jpg" class="w-full mb-2">
+                    </div>
+                </div>
+                <p style="color:#f37020;">YeoJin (임여진)</p>
+                <p>Listen On <a
+                        href="https://music.youtube.com/playlist?list=OLAK5uy_nx3-4pm9UK3toNvNlkZk4r_rdpv4X6BlU"><i
+                            class="hover:text-red-600 fab fa-youtube"></i></a> <a
+                        href="https://open.spotify.com/album/7j4J6jWNmKjzpiWxPEdEcS?si=Aa8mNqnZToGJ-jvD0JFQzg"><i
+                            class="hover:text-green-400 fab fa-spotify"></i></a></p>
+                <p class="h-6 text-sm">유닛 활동 없음</p>
+            </div>
+            <div class="m-4">
+                <div class="relative">
+                    <div class="absolute bg-black z-10 inset-0 opacity-0 hover:opacity-75">
+                        <div
+                            class="relative flex flex-col justify-center items-center text-white w-full h-full text-xl">
+                            <p>2017년 2월 13일 공개</p>
+                            <p>2017년 3월 12일 데뷔</p>
+                            <p>상징동물 : 사슴</p>
+                            <p>상징색 : 연분홍색</p>
+                            <p>MBTI : INFP</p>
+                            <p>국적 : 홍콩특별행정자치구</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/assets/images/loona-poster/vivi.jpg" class="w-full mb-2">
+                    </div>
+                </div>
+                <p style="color:#f5a0b3;">ViVi (黃珈熙)</p>
+                <p>Listen On <a
+                        href="https://music.youtube.com/playlist?list=OLAK5uy_nreg5WUG43WZkBY8lxWXFrvoe_n9EzDuQ"><i
+                            class="hover:text-red-600 fab fa-youtube"></i></a> <a
+                        href="https://open.spotify.com/album/3eg9jvcmafP60bG9YffJn8?si=WPhN5UheQWij19kqklDbiA"><i
+                            class="hover:text-green-400 fab fa-spotify"></i></a></p>
+                <img src="/assets/images/loona-13.png" class="h-6 inline-block">
+            </div>
+            <div class="m-4">
+                <div class="relative">
+                    <div class="absolute bg-black z-10 inset-0 opacity-0 hover:opacity-75">
+                        <div
+                            class="relative flex flex-col justify-center items-center text-white w-full h-full text-xl">
+                            <p>2017년 5월 15일 공개</p>
+                            <p>2017년 5월 23일 데뷔</p>
+                            <p>상징동물 : 부엉이</p>
+                            <p>상징색 : 빨간색</p>
+                            <p>MBTI : ESTJ</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/assets/images/loona-poster/kimlip.jpg" class="w-full mb-2">
+                    </div>
+                </div>
+                <p style="color:#EF1841;">Kim Lip (김정은)</p>
+                <p>Listen On <a
+                        href="https://music.youtube.com/playlist?list=OLAK5uy_kT0eKieY8nhrwpJKGFuqS52LQh44-25kE"><i
+                            class="hover:text-red-600 fab fa-youtube"></i></a> <a
+                        href="https://open.spotify.com/album/5BTKWSg65wQMCj0CnPSx34?si=bstCFfPhQZ-TWcOvN9--5A"><i
+                            class="hover:text-green-400 fab fa-spotify"></i></a></p>
+                <img src="/assets/images/loona-oec.jpg" class="h-6 inline-block">
+            </div>
+            <div class="m-4">
+                <div class="relative">
+                    <div class="absolute bg-black z-10 inset-0 opacity-0 hover:opacity-75">
+                        <div
+                            class="relative flex flex-col justify-center items-center text-white w-full h-full text-xl">
+                            <p>2017년 6월 13일 공개</p>
+                            <p>2017년 6월 26일 데뷔</p>
+                            <p>상징동물 : 블루베타</p>
+                            <p>상징색 : 파란색</p>
+                            <p>MBTI : ISFJ</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/assets/images/loona-poster/jinsoul.jpg" class="w-full mb-2">
+                    </div>
+                </div>
+                <p style="color:#1924A7;">JinSoul (정진솔)</p>
+                <p>Listen On <a
+                        href="https://music.youtube.com/playlist?list=OLAK5uy_kgARdt8ARiVbUyuHqqjRVQzwP-dCGOF0w"><i
+                            class="hover:text-red-600 fab fa-youtube"></i></a> <a
+                        href="https://open.spotify.com/album/4aihvbWq3RQ1TAR2awMsqi?si=-QMgzVlUTpmdDfY9J_9Qcg"><i
+                            class="hover:text-green-400 fab fa-spotify"></i></a></p>
+                <img src="/assets/images/loona-oec.jpg" class="h-6 inline-block">
+            </div>
+            <div class="m-4">
+                <div class="relative">
+                    <div class="absolute bg-black z-10 inset-0 opacity-0 hover:opacity-75">
+                        <div
+                            class="relative flex flex-col justify-center items-center text-white w-full h-full text-xl">
+                            <p>2017년 7월 12일 공개</p>
+                            <p>2017년 7월 28일 데뷔</p>
+                            <p>상징동물 : 과일박쥐</p>
+                            <p>상징색 : 보라색</p>
+                            <p>MBTI : ENFP</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/assets/images/loona-poster/choerry.jpg" class="w-full mb-2">
+                    </div>
+                </div>
+                <p style="color:#5A2B92;">Choerry (최예림)</p>
+                <p>Listen On <a
+                        href="https://music.youtube.com/playlist?list=OLAK5uy_nXN0nH9frn9UxhPr-aJbwFsEDpQRY3wOs"><i
+                            class="hover:text-red-600 fab fa-youtube"></i></a> <a
+                        href="https://open.spotify.com/album/7zWV8dHkh06EclukKh1jVh?si=FqxW-SSzQaSqhxXE52CZ2Q"><i
+                            class="hover:text-green-400 fab fa-spotify"></i></a></p>
+                <img src="/assets/images/loona-oec.jpg" class="h-6 inline-block">
+            </div>
+            <div class="m-4">
+                <div class="relative">
+                    <div class="absolute bg-black z-10 inset-0 opacity-0 hover:opacity-75">
+                        <div
+                            class="relative flex flex-col justify-center items-center text-white w-full h-full text-xl">
+                            <p>2017년 11월 14일 공개</p>
+                            <p>2017년 11월 28일 데뷔</p>
+                            <p>상징동물 : 백조</p>
+                            <p>상징색 : 버건디색</p>
+                            <p>MBTI : ENFJ</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/assets/images/loona-poster/yves.jpg" class="w-full mb-2">
+                    </div>
+                </div>
+                <p style="color:#7B0134;">Yves (하수영)</p>
+                <p>Listen On <a
+                        href="https://music.youtube.com/playlist?list=OLAK5uy_nRguSesPG_lesGSZTT_TEloChlSaNV-vA"><i
+                            class="hover:text-red-600 fab fa-youtube"></i></a> <a
+                        href="https://open.spotify.com/album/4Rkz00xg0zSLdmipbG6uRr?si=XPuR14hKTsupimCWrgJ-Sg"><i
+                            class="hover:text-green-400 fab fa-spotify"></i></a></p>
+                <img src="/assets/images/loona-yyxy.png" class="h-6 p-1.5 inline-block">
+            </div>
+            <div class="m-4">
+                <div class="relative">
+                    <div class="absolute bg-black z-10 inset-0 opacity-0 hover:opacity-75">
+                        <div
+                            class="relative flex flex-col justify-center items-center text-white w-full h-full text-xl">
+                            <p>2017년 12월 14일 공개</p>
+                            <p>2016년 12월 28일 데뷔</p>
+                            <p>상징동물 : 펭귄</p>
+                            <p>상징색 : 피치색</p>
+                            <p>MBTI : ENTP</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/assets/images/loona-poster/chuu.jpg" class="w-full mb-2">
+                    </div>
+                </div>
+                <p style="color:#F6917D;">Chuu (김지우)</p>
+                <p>Listen On <a
+                        href="https://music.youtube.com/playlist?list=OLAK5uy_llBswGf3xPMBQ4wjqcLfqbM_Vz_8B6Sjw"><i
+                            class="hover:text-red-600 fab fa-youtube"></i></a> <a
+                        href="https://open.spotify.com/album/6YeZQkSgIVYCBefzTxwVdu?si=Wgd4O2UPSFKqHrbolAzQcg"><i
+                            class="hover:text-green-400 fab fa-spotify"></i></a></p>
+                <img src="/assets/images/loona-yyxy.png" class="h-6 p-1.5 inline-block">
+            </div>
+            <div class="m-4">
+                <div class="relative">
+                    <div class="absolute bg-black z-10 inset-0 opacity-0 hover:opacity-75">
+                        <div
+                            class="relative flex flex-col justify-center items-center text-white w-full h-full text-xl">
+                            <p>2018년 1월 15일 공개</p>
+                            <p>2018년 1월 30일 데뷔</p>
+                            <p>상징동물 : 나비</p>
+                            <p>상징색 : 에덴 그린</p>
+                            <p>MBTI : INTP</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/assets/images/loona-poster/gowon.jpg" class="w-full mb-2">
+                    </div>
+                </div>
+                <p style="color:#37BB9D;">Go Won (박채원)</p>
+                <p>Listen On <a
+                        href="https://music.youtube.com/playlist?list=OLAK5uy_ns1NGpRT5xpM9PtZJDSS2UTR8iE0_WbX4"><i
+                            class="hover:text-red-600 fab fa-youtube"></i></a> <a
+                        href="https://open.spotify.com/album/5li9RKVy6K7WOSR4DNJc5y?si=hrko1SzcQfeQZzrCdLUP-g"><i
+                            class="hover:text-green-400 fab fa-spotify"></i></a></p>
+                <img src="/assets/images/loona-yyxy.png" class="h-6 p-1.5 inline-block">
+            </div>
+            <div class="m-4">
+                <div class="relative">
+                    <div class="absolute bg-black z-10 inset-0 opacity-0 hover:opacity-75">
+                        <div
+                            class="relative flex flex-col justify-center items-center text-white w-full h-full text-xl">
+                            <p>2018년 3월 17일 공개</p>
+                            <p>2018년 3월 30일 데뷔</p>
+                            <p>상징동물 : 늑대</p>
+                            <p>상징색 : 은별색</p>
+                            <p>MBTI : ISTP</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/assets/images/loona-poster/oliviahye.jpg" class="w-full mb-2">
+                    </div>
+                </div>
+                <p style="color:#48464A;">Olivia Hye (손혜주)</p>
+                <p>Listen On <a
+                        href="https://music.youtube.com/playlist?list=OLAK5uy_nrmImgJrgTBPmCrZU-p7VZjPk8mC5nR88"><i
+                            class="hover:text-red-600 fab fa-youtube"></i></a> <a
+                        href="https://open.spotify.com/album/0l2Z13tBw1lq2IcnBpfJeC?si=3S19772rTzuQ68eKbnayCQ"><i
+                            class="hover:text-green-400 fab fa-spotify"></i></a></p>
+                <img src="/assets/images/loona-yyxy.png" class="h-6 p-1.5 inline-block">
+            </div>
+    </article>
+    <footer>
+        <p>진짜 생각 1도 안나서 노래듣다가 급하게 만든 페이지</p>
+    </footer>
 </body>
 
 </html>

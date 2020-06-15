@@ -4,3 +4,5 @@
 .vscode/*
 .git-ftp-ignore
 README.md
+tailwind.config.js
+stylesheet.css
