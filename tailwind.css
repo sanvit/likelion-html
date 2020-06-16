@@ -753,10 +753,6 @@ video {
   text-align: center;
 }
 
-.text-right {
-  text-align: right;
-}
-
 .text-white {
   --text-opacity: 1;
   color: #fff;
@@ -853,6 +849,10 @@ article div div p {
 @media (min-width: 640px) {
   .sm\:mt-4 {
     margin-top: 1rem;
+  }
+
+  .sm\:text-right {
+    text-align: right;
   }
 
   .sm\:grid-cols-2 {
