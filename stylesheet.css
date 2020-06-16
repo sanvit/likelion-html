@@ -4,14 +4,29 @@
 
 @import "tailwindcss/utilities";
 
+@font-face {
+    font-family: 'NEXONLv1GothicOTFLight'; 
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal; }
+
+
 @font-face{
-    font-family: 'NanumSquareL';
-    src:url('https://www.handoyun.com/geo/NanumSquareL.woff') format('woff');
+    font-family: 'TingTong';
+    src:url('/assets/fonts/TingTong.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
-div {
-    font-family: 'Arial';
-    color: red;
+.enname{
+    font-family: 'TingTong';
+    font-size: 1.5rem;
+}
+
+article div div div div div p {
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+article div div p {
+    font-family: 'NEXONLv1GothicOTFLight';
 }
