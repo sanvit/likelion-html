@@ -1,10 +1,10 @@
 module.exports = {
-  purge: [],
+  purge: [
+    './index.html',
+  ],
   theme: {
     extend: {},
   },
   variants: {},
-  plugins: [
-    require('@tailwindcss/ui'),
-  ],
+  plugins: [],
 }
