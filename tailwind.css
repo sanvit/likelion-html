@@ -833,7 +833,11 @@ video {
   font-style: normal;
 }
 
-.enname{
+.p-1\.5 {
+  padding: 0.375rem
+}
+
+.enname {
   font-family: 'TingTong';
   font-size: 1.5rem;
 }
